@@ -1,0 +1,7 @@
+gradio>=4.0.0
+numpy
+pandas
+joblib
+scikit-learn==1.5.1
+httpx>=0.24.0
+safehttpx>=0.1.6 
