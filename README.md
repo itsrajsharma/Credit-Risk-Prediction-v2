@@ -1,34 +1,28 @@
-# Credit Risk Gradio App
+---
+title: "Credit Risk Prediction App"
+emoji: 📊
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: "4.0.0"
+app_file: app.py
+pinned: false
+license: mit
+---
 
-This project contains a Gradio application for predicting credit risk.
+# 📊 Credit Risk Gradio App
 
-## Setup
+This project contains a **Gradio application** for predicting credit risk using a trained Random Forest model.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/<your-username>/<your-repo>.git
-    cd <your-repo>
-    ```
+## 🚀 Features
+- Enter borrower details or load a sample profile
+- Predict whether the applicant is **high risk (1)** or **low risk (0)**
+- Built with **scikit-learn + Gradio**
+- Runs live on Hugging Face Spaces
 
-2.  **Create and activate a virtual environment:**
-    ```bash
-    python -m venv venv
-    .\venv\Scripts\activate
-    ```
+## ⚡ Setup (Local Development)
 
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Run the application:**
-    ```bash
-    python app.py
-    ```
-
-## Files
-
-*   `app.py`: The main Gradio application script.
-*   `requirements.txt`: Lists the Python dependencies.
-*   `credit_risk_model.pkl`: The pre-trained credit risk prediction model.
-*   `samples.csv` (optional): Sample data for testing the application.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/<your-username>/<your-repo>.git
+   cd <your-repo>
