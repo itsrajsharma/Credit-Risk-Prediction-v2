@@ -22,7 +22,7 @@ import gradio as gr
 # ---------- CONFIG ----------
 MODEL_PATH = "credit_risk_model.pkl"
 SAMPLES_CSV = "samples.csv"   # optional, but recommended (must include FEATURES + TARGET)
-PORT = 7865
+PORT = 7860 # Use a common port for Gradio on HF Spaces
 # ----------------------------
 
 # FEATURES: exact names & order that pipeline expects
@@ -196,5 +196,12 @@ with gr.Blocks(title="Credit Risk — Demo (samples + CSV + random)") as demo:
     csv_uploader.upload(fn=batch_predict, inputs=csv_uploader, outputs=[batch_status, batch_table])
 
 if __name__ == "__main__":
-    print(f"Starting Gradio on 127.0.0.1:{PORT} ...")
-    demo.launch(server_name="127.0.0.1", server_port=PORT, share=False, inbrowser=False, debug=True, show_error=True)
+    print(f"Starting Gradio on 0.0.0.0:{PORT} ...") # Log 0.0.0.0
+    demo.launch(
+        server_name="0.0.0.0", # Bind to all interfaces for containerized environments
+        server_port=PORT,
+        share=False,
+        inbrowser=False,
+        debug=True,
+        show_error=True
+    )
