@@ -4,4 +4,10 @@ pandas
 joblib
 scikit-learn==1.5.1
 httpx>=0.24.0
-safehttpx>=0.1.6 
+safehttpx>=0.1.6
+shap>=0.45.0
+xgboost>=2.0.0
+lightgbm>=4.0.0
+matplotlib>=3.7.0
+pillow>=9.0.0
+openpyxl>=3.1.0
