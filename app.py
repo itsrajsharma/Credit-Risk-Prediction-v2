@@ -36,6 +36,16 @@ from PIL import Image
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import f1_score, roc_auc_score
 
+try:
+    import spaces
+except ImportError:
+    class spaces:
+        @staticmethod
+        def GPU(func=None, **kwargs):
+            if func is None:
+                return lambda f: f
+            return func
+
 # ═══════════════════════════════════════════════════════════════
 # CONFIG
 # ═══════════════════════════════════════════════════════════════
@@ -393,6 +403,7 @@ def _build_comparison_table():
     return html
 
 
+@spaces.GPU
 def refresh_comparison():
     global _comparison_results
     _comparison_results = None
@@ -419,6 +430,7 @@ def randomize_example():
     return vals
 
 
+@spaces.GPU
 def predict_single(*args):
     """
     args: feature1..feature14, threshold, sample_key
@@ -451,6 +463,7 @@ def predict_single(*args):
     return label_map, prob_str, true_val, tier_html, shap_img
 
 
+@spaces.GPU
 def batch_predict(uploaded_file):
     """
     Batch CSV prediction.
