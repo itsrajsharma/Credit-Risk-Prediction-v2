@@ -40,7 +40,7 @@ from sklearn.metrics import f1_score, roc_auc_score
 # CONFIG
 # ═══════════════════════════════════════════════════════════════
 DATA_XLSX  = "data.xlsx"
-PORT       = 7860
+PORT       = int(os.environ.get("PORT", 7860))
 SAMPLES_CSV = "samples.csv"
 
 # Columns that exist in the raw data but are NOT model features
@@ -622,7 +622,7 @@ if __name__ == "__main__":
         server_name="0.0.0.0",
         server_port=PORT,
         share=False,
-        inbrowser=True,
-        debug=True,
-        show_error=True
+        inbrowser=False,
+        debug=False,
+        show_error=False
     )

@@ -1,0 +1,10 @@
+venv/
+.git/
+.gitignore
+.gitattributes
+*.ipynb
+__pycache__/
+*.pyc
+.dockerignore
+Dockerfile
+.gemini/
