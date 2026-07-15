@@ -526,7 +526,7 @@ h1, h2, h3 { color: #e8e8f0 !important; }
 
 _feat_desc = ", ".join(FEATURES)
 
-with gr.Blocks(title="Credit Risk — AI Demo", css=CUSTOM_CSS) as demo:
+with gr.Blocks(title="Credit Risk — AI Demo") as demo:
     gr.Markdown(
         "# 📊 Credit Risk Prediction\n"
         "Powered by Random Forest · SHAP explanations · Model comparison · Confidence tiers"
@@ -624,5 +624,6 @@ if __name__ == "__main__":
         share=False,
         inbrowser=False,
         debug=False,
-        show_error=False
+        show_error=False,
+        css=CUSTOM_CSS
     )
